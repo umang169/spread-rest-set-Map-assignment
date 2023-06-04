@@ -1,0 +1,26 @@
+// Q 6. Nested Objects.
+// Write a function that takes an object representing a person as input, and extracts the name and street
+// properties from a nested object using object destructuring. The function should return an object with these two
+// properties. A sample object is given below.
+
+function extractNameAndStreet(person) {
+  const { name, address: { street } } = person;
+  return { name, street };
+}
+
+// Sample object
+const person = {
+  name: "John Doe",
+  address: {
+    street: "123 Main Street",
+    city: "New York",
+    state: "NY",
+    country: "USA"
+  }
+};
+
+// Extract name and street properties
+const { name, street } = extractNameAndStreet(person);
+
+console.log(name);   // Output: John Doe
+console.log(street); // Output: 123 Main Street
